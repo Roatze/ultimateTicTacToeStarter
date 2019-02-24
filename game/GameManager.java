@@ -74,7 +74,7 @@ public class GameManager {
      * @param move The next user move
      * @return Returns true if the update was successful, false otherwise.
      */
-    public Boolean UpdateGame(IMove move)
+    public Boolean updateGame(IMove move)
     {
         //Verify the new move
         if(!VerifyMoveLegality(move)) 
@@ -84,7 +84,7 @@ public class GameManager {
         
         //Update the currentState
         UpdateBoard(move);
-        UpdateMacroboard(move);
+        updateMacroboard(move);
         
         //Update currentPlayer
         currentPlayer = (currentPlayer + 1) % 2;
@@ -96,7 +96,7 @@ public class GameManager {
      * Non-User driven input, e.g. an update for playing a bot move.
      * @return Returns true if the update was successful, false otherwise.
      */
-    public Boolean UpdateGame()
+    public Boolean updateGame()
     {
         //Check game mode is set to one of the bot modes.
         assert(mode != GameMode.HumanVsHuman);
@@ -121,7 +121,7 @@ public class GameManager {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
     
-    private Boolean VerifyMoveLegality(IMove move)
+    private Boolean verifyMoveLegality(IMove move)
     {
         //Test if the move is legal   
         //NOTE: should also check whether the move is placed on an occupied spot.
@@ -130,13 +130,13 @@ public class GameManager {
         return currentState.getField().isInActiveMicroboard(move.getX(), move.getY());
     }
     
-    private void UpdateBoard(IMove move)
+    private void updateBoard(IMove move)
     {
        //TODO: Update the board to the new state 
         throw new UnsupportedOperationException("Not supported yet."); 
     }
     
-    private void UpdateMacroboard(IMove move)
+    private void updateMacroboard(IMove move)
     {
        //TODO: Update the macroboard to the new state 
        throw new UnsupportedOperationException("Not supported yet."); 
