@@ -77,13 +77,13 @@ public class GameManager {
     public Boolean updateGame(IMove move)
     {
         //Verify the new move
-        if(!VerifyMoveLegality(move)) 
+        if(!verifyMoveLegality(move)) 
         { 
             return false; 
         }
         
         //Update the currentState
-        UpdateBoard(move);
+        updateBoard(move);
         updateMacroboard(move);
         
         //Update currentPlayer
@@ -110,7 +110,7 @@ public class GameManager {
             IMove botMove = bot.doMove(currentState);
             
             //Be aware that your bots might perform illegal moves.
-            return UpdateGame(botMove);
+            return updateGame(botMove);
         }
         
         //Check bot is not equal to null, and throw an exception if it is.
